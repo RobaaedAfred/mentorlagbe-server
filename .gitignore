@@ -1,0 +1,15 @@
+# Dependencies (no leading slash ignores nested folders too)
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# TypeScript compiled output
+dist/
+build/
+
+# Logs and OS files
+npm-debug.log*
+.DS_Store
