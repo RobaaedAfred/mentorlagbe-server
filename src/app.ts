@@ -6,7 +6,9 @@ import { auth } from "./auth";
 import { env } from "./config/env";
 import { HttpError } from "./utils/helpers";
 import tokenRoutes from "./routes/token.routes";
+import tuitionRoutes from "./routes/tuitions.routes";
 import meRoutes from "./routes/me.routes";
+import statsRoutes from "./routes/stats.routes";
 
 const app = express();
 
@@ -27,6 +29,8 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/token", tokenRoutes);
+app.use("/api/tuitions", tuitionRoutes);
+app.use("/api/stats", statsRoutes);
 app.use("/api", meRoutes);
 
 app.use((_req, res) => {
