@@ -5,6 +5,8 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./auth";
 import { env } from "./config/env";
 import { HttpError } from "./utils/helpers";
+import tokenRoutes from "./routes/token.routes";
+import meRoutes from "./routes/me.routes";
 
 const app = express();
 
@@ -23,6 +25,9 @@ app.use(express.json({ limit: "10mb" }));
 app.get("/", (_req, res) => {
   res.json({ name: "MentorLagbe API", status: "ok", time: new Date().toISOString() });
 });
+
+app.use("/api/token", tokenRoutes);
+app.use("/api", meRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({ message: "Route not found" });
