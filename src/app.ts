@@ -1,6 +1,8 @@
 import express from "express";
 import type { ErrorRequestHandler } from "express";
 import cors from "cors";
+import { toNodeHandler } from "better-auth/node";
+import { auth } from "./auth";
 import { env } from "./config/env";
 import { HttpError } from "./utils/helpers";
 
@@ -12,6 +14,9 @@ app.use(
     credentials: true,
   }),
 );
+
+// BetterAuth handler must also be mounted before express.json().
+app.all("/api/auth/*", toNodeHandler(auth));
 
 app.use(express.json({ limit: "10mb" }));
 
