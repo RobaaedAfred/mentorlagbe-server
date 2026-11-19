@@ -12,6 +12,7 @@ import studentRoutes from "./routes/student.routes";
 import adminRoutes from "./routes/admin.routes";
 import meRoutes from "./routes/me.routes";
 import statsRoutes from "./routes/stats.routes";
+import paymentRoutes, { webhookHandler } from "./routes/payments.routes";
 
 const app = express();
 
@@ -21,6 +22,9 @@ app.use(
     credentials: true,
   }),
 );
+
+// Stripe needs the raw body to verify signatures, so this is registered before express.json().
+app.post("/api/payments/webhook", express.raw({ type: "application/json" }), webhookHandler);
 
 // BetterAuth handler must also be mounted before express.json().
 app.all("/api/auth/*", toNodeHandler(auth));
@@ -37,6 +41,7 @@ app.use("/api/stats", statsRoutes);
 app.use("/api/tutor", tutorRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/payments", paymentRoutes);
 app.use("/api", meRoutes);
 
 app.use((_req, res) => {
