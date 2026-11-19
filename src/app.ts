@@ -7,6 +7,7 @@ import { env } from "./config/env";
 import { HttpError } from "./utils/helpers";
 import tokenRoutes from "./routes/token.routes";
 import tuitionRoutes from "./routes/tuitions.routes";
+import tutorRoutes from "./routes/tutor.routes";
 import meRoutes from "./routes/me.routes";
 import statsRoutes from "./routes/stats.routes";
 
@@ -31,6 +32,7 @@ app.get("/", (_req, res) => {
 app.use("/api/token", tokenRoutes);
 app.use("/api/tuitions", tuitionRoutes);
 app.use("/api/stats", statsRoutes);
+app.use("/api/tutor", tutorRoutes);
 app.use("/api", meRoutes);
 
 app.use((_req, res) => {
