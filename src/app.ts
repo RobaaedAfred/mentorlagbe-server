@@ -9,6 +9,7 @@ import tokenRoutes from "./routes/token.routes";
 import tuitionRoutes from "./routes/tuitions.routes";
 import tutorRoutes from "./routes/tutor.routes";
 import studentRoutes from "./routes/student.routes";
+import adminRoutes from "./routes/admin.routes";
 import meRoutes from "./routes/me.routes";
 import statsRoutes from "./routes/stats.routes";
 
@@ -35,6 +36,7 @@ app.use("/api/tuitions", tuitionRoutes);
 app.use("/api/stats", statsRoutes);
 app.use("/api/tutor", tutorRoutes);
 app.use("/api/student", studentRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api", meRoutes);
 
 app.use((_req, res) => {
