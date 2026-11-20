@@ -1,8 +1,4 @@
-/**
- * Seed script: creates demo admin / tutors / students (through BetterAuth so the
- * passwords are hashed correctly), 12 approved tuitions, a few pending ones and
- * sample applications.   Usage:  npm run seed
- */
+
 import { auth } from "./auth";
 import { Applications, Payments, Tuitions, Users, client } from "./config/db";
 import type { ApplicationDoc, Role, TuitionDoc } from "./types";

@@ -4,7 +4,6 @@ import { ah } from "../utils/helpers";
 
 const router = Router();
 
-/** Public counters for the landing page. */
 router.get(
   "/",
   ah(async (_req, res) => {

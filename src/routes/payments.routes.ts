@@ -20,10 +20,7 @@ export const PLANS: Partial<Record<Role, { name: string; amount: number; descrip
   student: { name: "Pro Student", amount: 10, description: "Priority booking with tutors" },
 };
 
-/**
- * Idempotent fulfilment: records the payment once (keyed by stripeSessionId)
- * and upgrades the user. Called from both the webhook and the success-page verification.
- */
+
 const fulfilSession = async (session: Stripe.Checkout.Session) => {
   if (session.payment_status !== "paid") return null;
   const meta = session.metadata ?? {};

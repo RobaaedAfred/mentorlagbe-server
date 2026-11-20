@@ -8,11 +8,7 @@ const router = Router();
 
 const publicFilter = (): Filter<TuitionDoc> => ({ approvalStatus: "approved", isActive: true });
 
-/**
- * GET /api/tuitions
- * Server-side search (title / subject), filters (subject, classLevel, mode),
- * sorting and skip/limit pagination. Only approved + active posts are returned.
- */
+
 router.get(
   "/",
   ah(async (req, res) => {
@@ -51,7 +47,7 @@ router.get(
   }),
 );
 
-/** GET /api/tuitions/featured - 6 latest approved + active tuitions for the home page */
+/** GET /api/tuitions/featured  */
 router.get(
   "/featured",
   ah(async (_req, res) => {
@@ -60,7 +56,7 @@ router.get(
   }),
 );
 
-/** GET /api/tuitions/meta - distinct values used by the filter dropdowns */
+/** GET /api/tuitions/meta  */
 router.get(
   "/meta",
   ah(async (_req, res) => {
@@ -72,7 +68,7 @@ router.get(
   }),
 );
 
-/** GET /api/tuitions/:id - details page (approved posts only) with a tutor summary */
+/** GET /api/tuitions/:id */
 router.get(
   "/:id",
   ah(async (req, res) => {

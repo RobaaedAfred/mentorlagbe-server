@@ -64,7 +64,7 @@ router.post(
   }),
 );
 
-/** Lets the UI know whether the student has applied already (to disable the button). */
+
 router.get(
   "/applications/check/:tuitionId",
   ah(async (req, res) => {
@@ -94,7 +94,6 @@ router.delete(
   }),
 );
 
-/* ---------- Bookmarks (saved tuitions) ---------- */
 
 router.get(
   "/bookmarks",

@@ -66,8 +66,6 @@ router.patch(
   }),
 );
 
-/* ---------- Tuition moderation ---------- */
-
 router.get(
   "/tuitions",
   ah(async (req, res) => {
@@ -94,7 +92,6 @@ router.patch(
   }),
 );
 
-/* ---------- Transactions ---------- */
 
 router.get(
   "/transactions",

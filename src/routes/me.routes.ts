@@ -48,10 +48,7 @@ router.patch(
   }),
 );
 
-/**
- * POST /api/upload  { image: <base64 string> }
- * Uploads to ImgBB from the server so the API key never reaches the browser.
- */
+
 router.post(
   "/upload",
   verifyToken,

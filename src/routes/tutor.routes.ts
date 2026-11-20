@@ -9,7 +9,6 @@ router.use(verifyToken, verifyTutor);
 
 export const FREE_TUITION_LIMIT = 2;
 
-/** Validates & normalises the tuition form body. Returns an error string or the clean data. */
 const parseTuition = (body: Record<string, unknown>) => {
   const data = {
     title: str(body.title),
@@ -30,7 +29,6 @@ const parseTuition = (body: Record<string, unknown>) => {
   if (!(data.monthlyFee > 0)) return { error: "Monthly fee must be greater than 0" };
   if (!(data.daysPerWeek >= 1 && data.daysPerWeek <= 7)) return { error: "Days per week must be between 1 and 7" };
   if (!data.bannerImage) return { error: "Banner image is required" };
-  if (data.description.length < 30) return { error: "Description must be at least 30 characters" };
   return { data };
 };
 

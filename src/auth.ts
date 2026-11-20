@@ -13,7 +13,6 @@ export const auth = betterAuth({
     minPasswordLength: 6,
   },
   user: {
-    // Store BetterAuth users in the "users" collection required by the project spec.
     modelName: "users",
     additionalFields: {
       role: { type: "string", required: false, defaultValue: "student", input: true },
@@ -25,7 +24,7 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
-        // Never trust the role sent from the browser: only student / tutor can self-register.
+
         before: async (user) => {
           const requested = (user as { role?: string }).role;
           return {

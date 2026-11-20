@@ -7,10 +7,6 @@ import { ah } from "../utils/helpers";
 
 const router = Router();
 
-/**
- * Exchanges a valid BetterAuth session (cookie) for a short-lived JWT.
- * The client sends this JWT as `Authorization: Bearer <token>` to protected routes.
- */
 router.get(
   "/",
   ah(async (req, res) => {

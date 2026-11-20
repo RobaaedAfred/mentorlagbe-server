@@ -7,10 +7,7 @@ import type { Role } from "../types";
 export const signToken = (payload: { id: string; email: string; role: Role }) =>
   jwt.sign(payload, env.jwtSecret, { expiresIn: "2h" });
 
-/**
- * Verifies the Bearer JWT and loads the *current* user from MongoDB, so role
- * and plan changes (admin edits, Stripe upgrades) apply immediately.
- */
+
 export const verifyToken: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
   const header = req.headers.authorization;
   if (!header || !header.startsWith("Bearer ")) {
