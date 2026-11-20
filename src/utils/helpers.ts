@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import type { NextFunction, Request, RequestHandler, Response } from "express";
 
-
+/** Express 4 does not catch rejected promises, so wrap async handlers. */
 export const ah =
   (fn: (req: Request, res: Response, next: NextFunction) => Promise<unknown>): RequestHandler =>
   (req, res, next) => {
