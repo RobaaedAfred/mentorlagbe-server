@@ -1,6 +1,8 @@
+
 {
   "name": "mentorlagbe-server",
   "version": "1.0.0",
+  "type": "module",
   "description": "MentorLagbe REST API - Express, TypeScript, MongoDB, BetterAuth, JWT, Stripe",
   "main": "dist/index.js",
   "scripts": {
