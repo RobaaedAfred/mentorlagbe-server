@@ -1,7 +1,7 @@
 
-import { auth } from "./auth";
-import { Applications, Payments, Tuitions, Users, client } from "./config/db";
-import type { ApplicationDoc, Role, TuitionDoc } from "./types";
+import { auth } from "./auth.js";
+import { Applications, Payments, Tuitions, Users, client } from "./config/db.js";
+import type { ApplicationDoc, Role, TuitionDoc } from "./types.js";
 
 const PASSWORD = "Mentor@123";
 

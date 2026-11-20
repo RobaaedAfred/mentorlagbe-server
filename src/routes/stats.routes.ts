@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { Tuitions, Users } from "../config/db";
-import { ah } from "../utils/helpers";
+import { Tuitions, Users } from "../config/db.js";
+import { ah } from "../utils/helpers.js";
 
 const router = Router();
 

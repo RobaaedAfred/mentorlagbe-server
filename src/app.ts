@@ -2,17 +2,17 @@ import express from "express";
 import type { ErrorRequestHandler } from "express";
 import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
-import { auth } from "./auth";
-import { env } from "./config/env";
-import { HttpError } from "./utils/helpers";
-import tokenRoutes from "./routes/token.routes";
-import tuitionRoutes from "./routes/tuitions.routes";
-import tutorRoutes from "./routes/tutor.routes";
-import studentRoutes from "./routes/student.routes";
-import adminRoutes from "./routes/admin.routes";
-import meRoutes from "./routes/me.routes";
-import statsRoutes from "./routes/stats.routes";
-import paymentRoutes, { webhookHandler } from "./routes/payments.routes";
+import { auth } from "./auth.js";
+import { env } from "./config/env.js";
+import { HttpError } from "./utils/helpers.js";
+import tokenRoutes from "./routes/token.routes.js";
+import tuitionRoutes from "./routes/tuitions.routes.js";
+import tutorRoutes from "./routes/tutor.routes.js";
+import studentRoutes from "./routes/student.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
+import meRoutes from "./routes/me.routes.js";
+import statsRoutes from "./routes/stats.routes.js";
+import paymentRoutes, { webhookHandler } from "./routes/payments.routes.js";
 
 const app = express();
 

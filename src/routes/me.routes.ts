@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { Users } from "../config/db";
-import { verifyToken } from "../middleware/auth";
-import { ah, str } from "../utils/helpers";
-import { env } from "../config/env";
+import { Users } from "../config/db.js";
+import { verifyToken } from "../middleware/auth.js";
+import { ah, str } from "../utils/helpers.js";
+import { env } from "../config/env.js";
 
 const router = Router();
 

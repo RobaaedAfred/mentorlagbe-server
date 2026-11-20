@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { Applications, Tuitions, Users } from "../config/db";
-import { verifyStudent, verifyToken } from "../middleware/auth";
-import { ah, str, toObjectId } from "../utils/helpers";
-import type { ApplicationDoc } from "../types";
+import { Applications, Tuitions, Users } from "../config/db.js";
+import { verifyStudent, verifyToken } from "../middleware/auth.js";
+import { ah, str, toObjectId } from "../utils/helpers.js";
+import type { ApplicationDoc } from "../types.js";
 
 const router = Router();
 router.use(verifyToken, verifyStudent);

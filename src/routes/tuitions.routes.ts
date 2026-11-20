@@ -1,8 +1,8 @@
 import { Router } from "express";
 import type { Filter, Sort } from "mongodb";
-import { Tuitions, Users } from "../config/db";
-import { ah, escapeRegex, toObjectId } from "../utils/helpers";
-import type { TuitionDoc } from "../types";
+import { Tuitions, Users } from "../config/db.js";
+import { ah, escapeRegex, toObjectId } from "../utils/helpers.js";
+import type { TuitionDoc } from "../types.js";
 
 const router = Router();
 

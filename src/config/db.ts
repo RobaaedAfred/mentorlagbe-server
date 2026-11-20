@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
-import { env } from "./env";
-import type { ApplicationDoc, PaymentDoc, TuitionDoc, UserDoc } from "../types";
+import { env } from "./env.js";
+import type { ApplicationDoc, PaymentDoc, TuitionDoc, UserDoc } from "../types.js";
 
 export const client = new MongoClient(env.mongoUri);
 export const db = client.db(env.dbName);

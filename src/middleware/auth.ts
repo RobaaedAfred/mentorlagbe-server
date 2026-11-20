@@ -1,8 +1,8 @@
 import type { NextFunction, Request, RequestHandler, Response } from "express";
 import jwt from "jsonwebtoken";
-import { Users } from "../config/db";
-import { env } from "../config/env";
-import type { Role } from "../types";
+import { Users } from "../config/db.js";
+import { env } from "../config/env.js";
+import type { Role } from "../types.js";
 
 export const signToken = (payload: { id: string; email: string; role: Role }) =>
   jwt.sign(payload, env.jwtSecret, { expiresIn: "2h" });

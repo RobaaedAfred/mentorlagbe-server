@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import { db } from "./config/db";
-import { env } from "./config/env";
+import { db } from "./config/db.js";
+import { env } from "./config/env.js";
 
 export const auth = betterAuth({
   baseURL: env.authUrl,

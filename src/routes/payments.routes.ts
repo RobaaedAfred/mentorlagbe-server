@@ -1,11 +1,11 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import Stripe from "stripe";
-import { Payments, Users } from "../config/db";
-import { env } from "../config/env";
-import { verifyToken } from "../middleware/auth";
-import { ah, HttpError } from "../utils/helpers";
-import type { PaymentDoc, Role } from "../types";
+import { Payments, Users } from "../config/db.js";
+import { env } from "../config/env.js";
+import { verifyToken } from "../middleware/auth.js";
+import { ah, HttpError } from "../utils/helpers.js";
+import type { PaymentDoc, Role } from "../types.js";
 
 const router = Router();
 

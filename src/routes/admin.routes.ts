@@ -1,9 +1,9 @@
 import { Router } from "express";
 import type { Filter } from "mongodb";
-import { Payments, Tuitions, Users } from "../config/db";
-import { verifyAdmin, verifyToken } from "../middleware/auth";
-import { ah, escapeRegex, str, toObjectId } from "../utils/helpers";
-import type { TuitionDoc, UserDoc } from "../types";
+import { Payments, Tuitions, Users } from "../config/db.js";
+import { verifyAdmin, verifyToken } from "../middleware/auth.js";
+import { ah, escapeRegex, str, toObjectId } from "../utils/helpers.js";
+import type { TuitionDoc, UserDoc } from "../types.js";
 
 const router = Router();
 router.use(verifyToken, verifyAdmin);

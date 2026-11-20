@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { fromNodeHeaders } from "better-auth/node";
-import { auth } from "../auth";
-import { signToken } from "../middleware/auth";
-import { Users } from "../config/db";
-import { ah } from "../utils/helpers";
+import { auth } from "../auth.js";
+import { signToken } from "../middleware/auth.js";
+import { Users } from "../config/db.js";
+import { ah } from "../utils/helpers.js";
 
 const router = Router();
 
